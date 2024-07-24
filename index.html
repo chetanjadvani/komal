@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/output.css" rel="stylesheet">
+
+</head>
+<body class="">
+    <div class="step-container flex flex-row">
+
+        <div id="step-1" class=" step  align-middle  bg-pink-500 md:w-3/6 w-full bg-white border-pink-600 mx-auto mt-[100px] text-center p-5">
+          <p class="text-white font-bold">
+            Hi Komal How Are You? 
+            <br>
+            hope You will be Doing Fine.
+          </p>
+          <p >
+            <span class="text-blue-800">to read next message click next</span>
+            <br>
+            <button class="border border-pink-800 py-1 px-2 outline-0 bg-white font-bold text-blue-400" onclick="nextStep(2)">
+              Next
+            </button> 
+          </p>
+        </div>
+
+        
+        <div id="step-2" class=" step  align-middle hidden  bg-pink-500 md:w-3/6 w-full bg-white border-pink-600 mx-auto mt-[100px] text-center p-5">
+          <p class="text-white font-bold">
+           Komal I wanted to say something. 
+           if you are ready to Hear Go Next
+          </p>
+          <p >
+         
+            <br>
+            <button class="border border-pink-800 py-1 px-2 outline-0 bg-white font-bold text-blue-400" onclick="nextStep(3)">
+              Next
+            </button> 
+          </p>
+        </div>
+
+         
+        <div id="step-3" class=" step  align-middle hidden  bg-pink-500 md:w-3/6 w-full bg-white border-pink-600 mx-auto mt-[100px] text-center p-5">
+          <pre class="text-white font-bold">
+            Since I Saw you first Time.
+            i am just getting attracted towards you.
+            I don't know what is this.
+            your are being my focus
+          </pre>
+          <p >
+            <span class="text-blue-800">to read next message click next</span>
+            <br>
+            <button class="border border-pink-800 py-1 px-2 outline-0 bg-white font-bold text-blue-400" onclick="nextStep(4)">
+              Next
+            </button> 
+          </p>
+        </div>
+
+        <div id="step-4" class=" step  align-middle hidden  bg-pink-500 md:w-3/6 w-full bg-white border-pink-600 mx-auto mt-[100px] text-center p-5">
+          <pre class="text-white font-bold">
+            Not focus. you are being my priority
+            whenever u come infront of me.
+            i am just finding words to talk to u. 
+            now a days i leave everything aside after job
+            
+          </pre>
+          <p >
+            <span class="text-blue-800">to read next message click next</span>
+            <br>
+            <button class="border border-pink-800 py-1 px-2 outline-0 bg-white font-bold text-blue-400" onclick="nextStep(5)">
+              Next
+            </button> 
+          </p>
+        </div>
+
+        
+        <div id="step-5" class=" step  align-middle hidden  bg-pink-500 md:w-3/6 w-full bg-white border-pink-600 mx-auto mt-[100px] text-center p-5">
+          <pre class="text-white font-bold">
+            if there is scope for me in your life and ready to give me chance and 
+            prove my self to you
+            than accept otherwise decline i will respect your decision.
+            
+            below buttons will take to whatsapp.
+          </pre>
+          <p >
+            <br>
+            <div>
+            <button class="border border-pink-800 py-1 px-2 outline-0 bg-white font-bold text-blue-400" onclick="msg('accepted')">
+              Accept
+            </button> 
+            <button class="ml-10 border border-pink-800 py-1 px-2 outline-0 bg-white font-bold text-blue-400" onclick="msg('sorry')"> 
+              Decline
+            </button> 
+            </div>
+          </p>
+        </div>
+
+
+    </div>
+</body>
+<script type="text/javascript">
+    function nextStep(no) {
+      const steps = document.querySelectorAll("[id^='step']");
+      steps.forEach(step=>{
+        step.style.display="none"
+      })
+      
+      const displayStep = document.querySelector("#step-"+no)
+      displayStep.style.display = "block" 
+
+    }
+
+    function msg(text) {
+      if(text=="accepted")
+         window.location = "https://api.whatsapp.com/send/?phone=255758307030&text=accepted&type=phone_number&app_absent=0"
+      if(text=="sorry")
+         window.location = "https://api.whatsapp.com/send/?phone=255758307030&text=sorry&type=phone_number&app_absent=0"
+      
+    }
+</script>
+</html>
